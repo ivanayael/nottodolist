@@ -3,89 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not To Do List</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        form {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #ff6b6b;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #ff4c4c;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            background: #ffe6e6;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .delete {
-            background: #ff4c4c;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .delete:hover {
-            background: #e33e3e;
-        }
-        .permanent {
-            background: #ffd6d6;
-            font-weight: bold;
-        }
-    </style>
+    <title>Not To Do List - IYC Sapphire</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description" content="Una Not To Do List para mantener el foco evitando malas decisiones. Aprende a gestionar mejor tu tiempo y energía.">
+    <meta name="keywords" content="not to do list, productividad, evitar errores, gestión del tiempo, hábitos">
+    <meta name="author" content="Ivana Yael Currá, IYC Sapphire">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Not To Do List">
+    <meta property="og:description" content="Evita malas decisiones con esta lista diseñada para mantenerte en el camino correcto.">
+    <meta property="og:url" content="https://www.nottodolist.netlify.com">
+    <meta property="og:image" content="https://www.nottodolist.netlify.com/assets/img/nottodolist.png">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Not To Do List">
+    <meta name="twitter:description" content="Evita malas decisiones con esta lista diseñada para mantenerte en el camino correcto.">
+    <meta name="twitter:image" content="https://www.nottodolist.netlify.com/assets/img/nottodolist.png">
 </head>
 <body>
     <div class="container">
-        <h1>Not To Do List</h1>
-        <p>Esta página fué creada por mi en base a una idea que me surgio a leer un libro de tecnología "Como sobrevivir al siglo 21" (algo asi, perdon soy mala para los nombres)</p>
-        <p>En caso de que se encuentre con algún "bullie" en su vida, esto le ayudará a tomar buenas decisiones</p>
-        <p>Tome esto como un <b>"traductor de bullies"</b></p>
+        <h1>🛑 Not To Do List 🛑</h1>
+        <div>
+        <p>Esta página fué creada por mi en base a una idea que me surgio a leer un libro de tecnología "Como sobrevivir al siglo 21" (algo asi, perdon soy mala para los nombres)
+        <br>En caso de que se encuentre con algún "bullie" en su vida, esto le ayudará a tomar buenas decisiones
+        <br>Tome esto como un <b>"traductor de bullies"</b></p>
+        </div>
+        <br>
         <form id="notToDoForm">
             <input type="text" id="taskInput" placeholder="Agrega cosas a evitar..." required>
             <button type="submit">Agregar</button>
@@ -149,32 +93,13 @@
             <li class="permanent">Sólo existe una opción</li>
             <li class="permanent">Siempre estarás solo</li>
         </ul>
+        <footer>
+            <p>Autora: Ivana Yael Currá</p>
+            <a href="https://www.iycsapphire.com.ar/"><img alt="IYC Sapphire Website" src="assets/img/IconoLinkedinIYC.webp"></img></a>
+        </footer>
     </div>
 
-    <script>
-        const form = document.getElementById('notToDoForm');
-        const taskInput = document.getElementById('taskInput');
-        const taskList = document.getElementById('taskList');
+    <script src="assets/js/script.js"></script>
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const taskText = taskInput.value.trim();
-            if (taskText === '') return;
-
-            const li = document.createElement('li');
-            li.textContent = taskText;
-
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'X';
-            deleteButton.className = 'delete';
-            deleteButton.onclick = () => li.remove();
-
-            li.appendChild(deleteButton);
-            taskList.appendChild(li);
-
-            taskInput.value = '';
-        });
-    </script>
 </body>
 </html>
